@@ -1,0 +1,31 @@
+{% extends 'todo_app/base.html' %}
+
+{% block content %}
+
+<div class="center-column">
+	<h3>New Task</h3>
+	<form method="POST" >
+		<!-- here should be the form don't forget about csrf_token -->
+		{% csrf_token %}
+		Task Name:<br>{{ form.task_name }}
+		Description:<br>{{ form.description }}<br>
+		Date:<br>{{ form.date }}
+		Status:<br>{{ form.status }}
+		
+		<input class="btn btn-info" type="submit" name="Create Task">
+	</form>
+
+{% endblock %}
+
+<!-- 		<label>Name</label>
+		<input type="text" name="Task Name"><br>
+
+		<label>Description</label><br>
+		<textarea rows="5" cols="76"></textarea><br>
+
+		<label>Date</label>
+		<input type="date" name="Task Date"><br>
+
+		<label>Status</label>
+		<input type="text" name="Task Status">
+-->
